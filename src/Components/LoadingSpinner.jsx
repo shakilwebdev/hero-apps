@@ -9,4 +9,3 @@ const LoadingSpinner = () => {
 };
 
 export default LoadingSpinner;
-<h2>Loading spinner</h2>;

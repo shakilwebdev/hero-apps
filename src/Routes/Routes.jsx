@@ -1,15 +1,29 @@
 import { createBrowserRouter } from "react-router";
 import Home from "../Pages/Home";
-import Products from "../Pages/Products";
+import MainLayout from "../Layouts/MainLayout";
+import Apps from "../Pages/Apps";
+import ErrorPage from "../Pages/ErrorPage";
+import Installation from "../Pages/Installation";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/products",
-    element: <Products />,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "/apps",
+        element: <Apps />,
+      },
+      {
+        path: "/installation",
+        element: <Installation />,
+      },
+    ],
   },
 ]);
 
