@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://i.ibb.co.com/fdZzKk8n/demo-app-1.webp",
+    "image": "https://i.ibb.co.com/KgS3zXh/1.webp",
     "title": "TaskFlow",
     "companyName": "NextGen Apps",
     "id": 1,
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/HT5JVpQ7/demo-app-2.webp",
+    "image": "https://i.ibb.co.com/LzPWNDTj/2.webp",
     "title": "FitBuddy",
     "companyName": "ActiveWell",
     "id": 2,
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/cKChwbs7/demo-app-3.webp",
+    "image": "https://i.ibb.co.com/LDWVGqjZ/3.webp",
     "title": "BudgetEase",
     "companyName": "FinTech Labs",
     "id": 3,
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/JjpqKHTP/demo-app-4.webp",
+    "image": "https://i.ibb.co.com/svNmsGYk/4.webp",
     "title": "PhotoCraft",
     "companyName": "PixelPro Studios",
     "id": 4,
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/5XPRHH9y/demo-app-5.webp",
+    "image": "https://i.ibb.co.com/hzCKLdR/5.webp",
     "title": "QuranLite",
     "companyName": "FaithTech",
     "id": 5,
@@ -90,7 +90,8 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/gFcKvrpS/demo-app-6.webp",
+    "image": "https://i.ibb.co.com/JjfnBg4g/6.webp",
+    "title": "CalmNest",
     "companyName": "CalmNest",
     "id": 6,
     "description": "Meditation and breathing exercises to improve focus and reduce stress.",
@@ -107,7 +108,8 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/k2hGDZ8P/demo-app-7.jpg",
+    "image": "https://i.ibb.co.com/cKbzRqmM/7.webp",
+    "title": "ChefWorld",
     "companyName": "ChefWorld",
     "id": 7,
     "description": "Discover, save, and share your favorite recipes from around the world.",
@@ -124,7 +126,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/DfhqGnvs/demo-app-8.jpg",
+    "image": "https://i.ibb.co.com/kgfzPNSt/8.webp",
     "title": "NotePro",
     "companyName": "SmartDev",
     "id": 8,
@@ -142,7 +144,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/Hfd9PDPq/demo-app-9.jpg",
+    "image": "https://i.ibb.co.com/hFmtp5d4/9.webp",
     "title": "TravelMate",
     "companyName": "GoExplore",
     "id": 9,
@@ -160,7 +162,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/XxBg24P1/demo-app-10.jpg",
+    "image": "https://i.ibb.co.com/DNrgQnP/10.webp",
     "title": "LearnLang",
     "companyName": "LinguaTech",
     "id": 10,
@@ -178,7 +180,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/XfBx14QZ/demo-app-11.jpg",
+    "image": "https://i.ibb.co.com/hRZjVB4g/11.webp",
     "title": "SafeGuard VPN",
     "companyName": "SecureNet",
     "id": 11,
@@ -196,7 +198,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/Qv7x1dfV/demo-app-12.jpg",
+    "image": "https://i.ibb.co.com/HfsrhXXq/12.webp",
     "title": "SmartWeather",
     "companyName": "SkyCore",
     "id": 12,
@@ -214,7 +216,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/sJKSC5zG/demo-app-13.jpg",
+    "image": "https://i.ibb.co.com/dJcw493w/13.webp",
     "title": "BookHaven",
     "companyName": "Readify",
     "id": 13,
@@ -232,7 +234,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/W4S0rG52/demo-app-14.jpg",
+    "image": "https://i.ibb.co.com/6JwxGsbM/14.webp",
     "title": "ShopSmart",
     "companyName": "BuyMore Ltd.",
     "id": 14,
@@ -250,7 +252,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/FqhRGKWx/demo-app-15.jpg",
+    "image": "https://i.ibb.co.com/wFj9dJcc/15.webp",
     "title": "CleanMaster",
     "companyName": "SystemPro",
     "id": 15,
@@ -268,7 +270,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/PsdDSYtS/demo-app-16.jpg",
+    "image": "https://i.ibb.co.com/nNkzHh8W/16.webp",
     "title": "FocusTime",
     "companyName": "BoostTech",
     "id": 16,
@@ -286,7 +288,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/zWNhffS7/demo-app-17.jpg",
+    "image": "https://i.ibb.co.com/N2m8srwN/17.webp",
     "title": "EduMaster",
     "companyName": "LearnHub",
     "id": 17,
@@ -304,7 +306,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/8nVF9Kc8/demo-app-18.jpg",
+    "image": "https://i.ibb.co.com/p6wRMd0G/18.webp",
     "title": "MusicWave",
     "companyName": "AudioPulse",
     "id": 18,
@@ -322,7 +324,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/s9JYH0p4/demo-app-19.jpg",
+    "image": "https://i.ibb.co.com/4ZTSDvSz/19.webp",
     "title": "NewsNow",
     "companyName": "InfoStream",
     "id": 19,
@@ -340,7 +342,7 @@
     ]
   },
   {
-    "image": "https://i.ibb.co.com/0RcdFcQR/demo-app-20.jpg",
+    "image": "https://i.ibb.co.com/F4FgXFL6/20.webp",
     "title": "DailyPlanner",
     "companyName": "OrganizeMe",
     "id": 20,
