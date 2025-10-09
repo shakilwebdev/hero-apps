@@ -8,7 +8,7 @@ const AppCard = ({ app }) => {
   const { title, image, ratingAvg, downloads } = app;
 
   return (
-    <div className="bg-white p-4 rounded shadow cursor-pointer">
+    <div className="bg-white p-4 rounded shadow-sm cursor-pointer hover:scale-105 transition ease-in-out">
       <img
         className="mx-auto w-full max-w-full rounded"
         src={image}
