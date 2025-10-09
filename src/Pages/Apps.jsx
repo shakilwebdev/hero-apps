@@ -14,7 +14,7 @@ const Apps = () => {
   // console.log(searchedApps);
 
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto px-1">
       <h2 className="mt-20 text-center text-[#001931] text-5xl font-bold mb-4">
         Our All Applications
       </h2>

@@ -26,7 +26,7 @@ const AppsDetails = () => {
     companyName,
   } = app || {};
   return (
-    <div>
+    <div className="max-w-[1440px] mx-auto px-1">
       <div className="flex items-center gap-10 mt-20">
         <img src={image} alt="image" />
         <div className="flex-1">
