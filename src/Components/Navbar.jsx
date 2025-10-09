@@ -1,5 +1,7 @@
 import React from "react";
-import { Link, Links, NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
+import { FaGithub } from "react-icons/fa";
+import LogoImage from "../assets/logo.png";
 
 const Navbar = () => {
   return (
@@ -38,7 +40,11 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="btn bg-white border-0 pl-0 text-xl">
+        <Link
+          to="/"
+          className="btn text-[#632ee3] bg-white border-0 pl-0 text-xl"
+        >
+          <img className="w-8 mr-1" src={LogoImage} alt="logo" />
           HERO.IO
         </Link>
       </div>
@@ -59,8 +65,9 @@ const Navbar = () => {
         <Link
           // target="_blank"
           to="https://github.com/shakilwebdev"
-          className="btn"
+          className="btn text-white font-semibold bg-gradient-to-r from-[#632ee3] to-[#9f62f2]"
         >
+          <FaGithub />
           Contribute
         </Link>
       </div>
