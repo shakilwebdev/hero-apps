@@ -18,14 +18,14 @@ const Banner = () => {
         <Link
           target="_blank"
           to="https://play.google.com/store/games"
-          className="btn font-semibold text-xl py-6"
+          className="btn font-semibold sm:text-xl py-6"
         >
           <img src={GooglePlay} alt="GooglePlay" /> Google Play
         </Link>
         <Link
           target="_blank"
           to="https://www.apple.com/app-store/"
-          className="btn font-semibold text-xl py-6"
+          className="btn font-semibold sm:text-xl py-6"
         >
           <img src={AppeStore} alt="AppeStore" /> AppleStore Play
         </Link>
