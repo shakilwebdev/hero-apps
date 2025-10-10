@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useApps from "../hooks/useApps";
 import DownloadIcon from "../assets/icon-downloads.png";
 import RatingIcon from "../assets/icon-ratings.png";
 import ReviewIcon from "../assets/icon-review.png";
+import { toast } from "react-toastify";
 import {
   Bar,
   BarChart,
@@ -12,6 +13,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import LoadingSpinner from "../Components/LoadingSpinner";
 const AppsDetails = () => {
   // const params = useParams();
   // console.log(params);
@@ -23,7 +25,14 @@ const AppsDetails = () => {
   // const app = apps.find((p) => String(p.id) === id);
   const app = apps.find((p) => p.id === Number(id));
   // console.log(app);
-  if (loading) return <p>Loading.....</p>;
+  const [isInstalled, setIsInstalled] = useState(false);
+
+  useEffect(() => {
+    const existingList = JSON.parse(localStorage.getItem("installation")) || [];
+    const alreadyInstalled = existingList.some((a) => a.id === Number(id));
+    setIsInstalled(alreadyInstalled);
+  }, [id]);
+  if (loading) return <LoadingSpinner />;
   const {
     title,
     image,
@@ -37,18 +46,20 @@ const AppsDetails = () => {
   } = app || {};
 
   const handleAddToInstallation = () => {
-    const existingList = JSON.parse(localStorage.getItem("installation"));
-    console.log(existingList);
-    let updatedList = [];
-    if (existingList) {
-      const isDuplicate = existingList.some((a) => a.id === app.id);
-      if (isDuplicate) return alert("App already in installation list");
-      updatedList = [...existingList, app];
-    } else {
-      updatedList.push(app);
+    const existingList = JSON.parse(localStorage.getItem("installation")) || [];
+    const isDuplicate = existingList.some((a) => a.id === app.id);
+
+    if (isDuplicate) {
+      setIsInstalled(true);
+      return;
     }
+
+    const updatedList = [...existingList, app];
     localStorage.setItem("installation", JSON.stringify(updatedList));
+    setIsInstalled(true);
+    toast.success("Installation successfull");
   };
+
   return (
     <div className="max-w-[1440px] mx-auto px-1">
       <div className="flex flex-col md:flex-row items-center gap-11 mt-20">
@@ -85,9 +96,14 @@ const AppsDetails = () => {
           </div>
           <button
             onClick={handleAddToInstallation}
-            className="btn bg-[#00d390] text-white font-semibold text-xl"
+            disabled={isInstalled}
+            className={`font-semibold text-xl px-6 py-3 rounded-lg transition-colors ${
+              isInstalled
+                ? "bg-gray-400 text-white cursor-not-allowed"
+                : "bg-[#00d390] text-white hover:bg-[#00b97f]"
+            }`}
           >
-            Install Now (<span>{size}</span> MB)
+            {isInstalled ? "Installed" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>
