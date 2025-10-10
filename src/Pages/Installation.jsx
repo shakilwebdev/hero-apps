@@ -4,24 +4,46 @@ import RatingIcon from "../assets/icon-ratings.png";
 
 const Installation = () => {
   const [appList, setAppeList] = useState([]);
+  const [sortOrder, setSortOrder] = useState("none");
   useEffect(() => {
     const savedList = JSON.parse(localStorage.getItem("installation"));
     if (savedList) setAppeList(savedList);
   }, []);
+
+  const sortedItem = (() => {
+    if (sortOrder === "download-asc") {
+      return [...appList].sort((a, b) => a.downloads - b.downloads);
+    } else if (sortOrder === "download-dsc") {
+      return [...appList].sort((a, b) => b.downloads - a.downloads);
+    } else {
+      return appList;
+    }
+  })();
   return (
     <div className="max-w-[1440px] mx-auto px-1">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#001931] text-center mt-20">
         Your Installed Apps
       </h2>
-      <p className="sm:text-xl text-[#627382] text-center mb-10 mt-5">
+      <p className="sm:text-xl text-[#627382] text-center mb-11 mt-5">
         Explore All Trending Apps on the Market developed by us
       </p>
-      <div className="flex justify-between">
-        <h2 className="text-2xl font-semibold">{appList.length} Apps Found</h2>
-        <button>short</button>
+      <div className="flex justify-between items-center mb-5">
+        <h2 className="text-xl sm:text-2xl font-semibold">
+          {sortedItem.length} Apps Found
+        </h2>
+
+        <select
+          className="border border-[#D2D2D2] p-2 rounded"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option value="none">Short By Size</option>
+          <option value="download-asc">Low-&gt;High</option>
+          <option value="download-dsc">High-&gt;Low</option>
+        </select>
       </div>
       <div className="my-3">
-        {appList.map((a) => (
+        {sortedItem.map((a) => (
           <div
             key={a.id}
             className="bg-white flex flex-col sm:flex-row justify-between p-3 mb-3 rounded-lg items-center"
