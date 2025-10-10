@@ -82,6 +82,13 @@ const AppsDetails = () => {
           </button>
         </div>
       </div>
+      <div></div>
+      <div>
+        <h2 className="text-2xl font-bold text-[#001931] mt-20 mb-4">
+          Description
+        </h2>
+        <p className="text-[#627382]">{description}</p>
+      </div>
     </div>
   );
 };
