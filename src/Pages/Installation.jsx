@@ -39,7 +39,7 @@ const Installation = () => {
                       src={DownloadIcon}
                       alt="DownloadIcon"
                     />{" "}
-                    {a.downloads}
+                    {a.downloads}M
                   </span>
                   <span className="text-[#FF8811] flex items-center gap-2">
                     <img className="w-4" src={RatingIcon} alt="RatingIcon" />{" "}

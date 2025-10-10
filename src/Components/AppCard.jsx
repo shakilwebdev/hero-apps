@@ -23,7 +23,7 @@ const AppCard = ({ app }) => {
           <div className="flex justify-between items-center ">
             <button className="flex items-center gap-2  bg-[#F1F5E8] rounded text-[#00D390] p-2.5">
               <img className="w-4" src={DownloadIcon} alt="DownloadIcon" />
-              {downloads}
+              {downloads}M
             </button>
             <button className="flex items-center gap-2 bg-[#FFF0E1] rounded text-[#FF8811] p-2.5">
               <img className="w-4" src={RatingIcon} alt="RatingIcon" />

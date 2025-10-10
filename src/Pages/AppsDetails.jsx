@@ -56,7 +56,7 @@ const AppsDetails = () => {
               <img className="w-10" src={DownloadIcon} alt="DownloadIcon" />
               <span>Downloads</span>
               <span className="text-[#001931] text-3xl sm:text-4xl font-bold">
-                {downloads}
+                {downloads}M
               </span>
             </div>
             <div className="flex flex-col gap-3 ">
@@ -70,7 +70,7 @@ const AppsDetails = () => {
               <img className="w-10" src={ReviewIcon} alt="DownloadIcon" />
               <span>Total Reviews</span>
               <span className="text-[#001931] text-3xl sm:text-4xl font-bold">
-                {reviews}
+                {reviews}K
               </span>
             </div>
           </div>
