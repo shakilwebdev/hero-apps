@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router";
 import useApps from "../hooks/useApps";
 import DownloadIcon from "../assets/icon-downloads.png";
@@ -25,13 +25,6 @@ const AppsDetails = () => {
   // const app = apps.find((p) => String(p.id) === id);
   const app = apps.find((p) => p.id === Number(id));
   // console.log(app);
-  const [isInstalled, setIsInstalled] = useState(false);
-
-  useEffect(() => {
-    const existingList = JSON.parse(localStorage.getItem("installation")) || [];
-    const alreadyInstalled = existingList.some((a) => a.id === Number(id));
-    setIsInstalled(alreadyInstalled);
-  }, [id]);
   if (loading) return <LoadingSpinner />;
   const {
     title,
@@ -46,20 +39,18 @@ const AppsDetails = () => {
   } = app || {};
 
   const handleAddToInstallation = () => {
-    const existingList = JSON.parse(localStorage.getItem("installation")) || [];
-    const isDuplicate = existingList.some((a) => a.id === app.id);
-
-    if (isDuplicate) {
-      setIsInstalled(true);
-      return;
+    const existingList = JSON.parse(localStorage.getItem("installation"));
+    // console.log(existingList);
+    let updatedList = [];
+    if (existingList) {
+      const isDuplicate = existingList.some((a) => a.id === app.id);
+      if (isDuplicate) return toast.warn("Already installation");
+      updatedList = [...existingList, app];
+    } else {
+      updatedList.push(app);
     }
-
-    const updatedList = [...existingList, app];
     localStorage.setItem("installation", JSON.stringify(updatedList));
-    setIsInstalled(true);
-    toast.success("Installation successfull");
   };
-
   return (
     <div className="max-w-[1440px] mx-auto px-1">
       <div className="flex flex-col md:flex-row items-center gap-11 mt-20">
@@ -96,14 +87,9 @@ const AppsDetails = () => {
           </div>
           <button
             onClick={handleAddToInstallation}
-            disabled={isInstalled}
-            className={`font-semibold text-xl px-6 py-3 rounded-lg transition-colors ${
-              isInstalled
-                ? "bg-gray-400 text-white cursor-not-allowed"
-                : "bg-[#00d390] text-white hover:bg-[#00b97f]"
-            }`}
+            className="btn bg-[#00d390] text-white font-semibold text-xl"
           >
-            {isInstalled ? "Installed" : `Install Now (${size} MB)`}
+            Install Now (<span>{size}</span> MB)
           </button>
         </div>
       </div>
