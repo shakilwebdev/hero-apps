@@ -45,6 +45,13 @@ const AppsDetails = () => {
     if (existingList) {
       const isDuplicate = existingList.some((a) => a.id === app.id);
       if (isDuplicate) return toast.warn("Already installation");
+
+      if (isDuplicate) {
+        return toast.warn("Already installation");
+      } else {
+        toast.success("Installation successfully");
+      }
+
       updatedList = [...existingList, app];
     } else {
       updatedList.push(app);
