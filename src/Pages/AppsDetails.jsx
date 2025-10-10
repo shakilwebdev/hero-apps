@@ -14,7 +14,7 @@ const AppsDetails = () => {
   // console.log(apps);
   // const app = apps.find((p) => String(p.id) === id);
   const app = apps.find((p) => p.id === Number(id));
-  console.log(app);
+  // console.log(app);
   if (loading) return <p>Loading.....</p>;
   const {
     title,
@@ -22,9 +22,24 @@ const AppsDetails = () => {
     ratingAvg,
     downloads,
     reviews,
+    size,
     description,
     companyName,
   } = app || {};
+
+  const handleAddToInstallation = () => {
+    const existingList = JSON.parse(localStorage.getItem("installation"));
+    console.log(existingList);
+    let updatedList = [];
+    if (existingList) {
+      const isDuplicate = existingList.some((a) => a.id === app.id);
+      if (isDuplicate) return alert("App already in installation list");
+      updatedList = [...existingList, app];
+    } else {
+      updatedList.push(app);
+    }
+    localStorage.setItem("installation", JSON.stringify(updatedList));
+  };
   return (
     <div className="max-w-[1440px] mx-auto px-1">
       <div className="flex flex-col md:flex-row items-center gap-11 mt-20">
@@ -59,8 +74,11 @@ const AppsDetails = () => {
               </span>
             </div>
           </div>
-          <button className="btn bg-[#00d390] text-white font-semibold text-xl">
-            Install Now (291 MB)
+          <button
+            onClick={handleAddToInstallation}
+            className="btn bg-[#00d390] text-white font-semibold text-xl"
+          >
+            Install Now (<span>{size}</span> MB)
           </button>
         </div>
       </div>
