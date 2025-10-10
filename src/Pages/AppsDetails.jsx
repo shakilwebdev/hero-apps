@@ -4,6 +4,14 @@ import useApps from "../hooks/useApps";
 import DownloadIcon from "../assets/icon-downloads.png";
 import RatingIcon from "../assets/icon-ratings.png";
 import ReviewIcon from "../assets/icon-review.png";
+import {
+  Bar,
+  BarChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 const AppsDetails = () => {
   // const params = useParams();
   // console.log(params);
@@ -25,6 +33,7 @@ const AppsDetails = () => {
     size,
     description,
     companyName,
+    ratings,
   } = app || {};
 
   const handleAddToInstallation = () => {
@@ -82,12 +91,39 @@ const AppsDetails = () => {
           </button>
         </div>
       </div>
-      <div></div>
+      {/* <div>
+        <BarChart
+          width={600}
+          height={250}
+          data={ratings}
+          layout="vertical"
+          margin={{ top: 20, right: 30, left: 50, bottom: 5 }}
+        >
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" />
+          <Tooltip />
+          <Bar dataKey="count" fill="#FF8C00" />
+        </BarChart>
+      </div> */}
+      <div className="mt-10 w-full h-[300px] md:h-[400px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={ratings}
+            layout="vertical"
+            margin={{ top: 20, right: 30, left: 50, bottom: 5 }}
+          >
+            <XAxis type="number" />
+            <YAxis dataKey="name" type="category" />
+            <Tooltip />
+            <Bar dataKey="count" fill="#FF8C00" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
       <div>
         <h2 className="text-2xl font-bold text-[#001931] mt-20 mb-4">
           Description
         </h2>
-        <p className="text-[#627382]">{description}</p>
+        <p className="text-[#627382] mb-20">{description}</p>
       </div>
     </div>
   );
