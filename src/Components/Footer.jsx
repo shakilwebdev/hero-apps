@@ -3,15 +3,16 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <div className="bg-[#001931]">
       <div className="max-w-[1440px] mx-auto px-1 pt-9">
         <div className="text-white flex justify-between">
-          <h2 className="font-bold flex items-center gap-2">
+          <Link to="/" className="font-bold flex items-center gap-2">
             <img className="w-10" src={Logo} alt="logo" /> HERO.IO
-          </h2>
+          </Link>
           <div>
             <h3 className="text-xl font-medium">Social Links</h3>
             <ul className="flex gap-4 mt-7">
