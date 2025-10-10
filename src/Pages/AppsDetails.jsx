@@ -27,32 +27,41 @@ const AppsDetails = () => {
   } = app || {};
   return (
     <div className="max-w-[1440px] mx-auto px-1">
-      <div className="flex items-center gap-10 mt-20">
+      <div className="flex flex-col md:flex-row items-center gap-11 mt-20">
         <img src={image} alt="image" />
-        <div className="flex-1">
-          <h2>{title}</h2>
-          <p>
-            <span>Developed by</span> <span>{companyName}</span>
+        <div className="flex-1 space-y-3">
+          <h2 className="text-3xl font-bold text-[#001931]">{title}</h2>
+          <p className="text-lg pb-2">
+            <span className="text-[#627382] ">Developed by</span>{" "}
+            <span className="text-[#632EE3] ">{companyName}</span>
           </p>
-          <hr />
-          <div className="flex gap-8">
-            <div className="flex flex-col gap-2">
+          <hr className="text-[#001931] pb-2" />
+          <div className="flex gap-10 space-y-3 pt-2">
+            <div className="flex flex-col gap-3">
               <img className="w-10" src={DownloadIcon} alt="DownloadIcon" />
               <span>Downloads</span>
-              <span>{downloads}</span>
+              <span className="text-[#001931] text-3xl sm:text-4xl font-bold">
+                {downloads}
+              </span>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3 ">
               <img className="w-10" src={RatingIcon} alt="DownloadIcon" />
               <span>Average Ratings</span>
-              <span>{ratingAvg}</span>
+              <span className="text-[#001931] text-3xl sm:text-4xl font-bold">
+                {ratingAvg}
+              </span>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-3">
               <img className="w-10" src={ReviewIcon} alt="DownloadIcon" />
               <span>Total Reviews</span>
-              <span>{reviews}</span>
+              <span className="text-[#001931] text-3xl sm:text-4xl font-bold">
+                {reviews}
+              </span>
             </div>
           </div>
-          <button className="btn btn-success">Install Now (291 MB)</button>
+          <button className="btn bg-[#00d390] text-white font-semibold text-xl">
+            Install Now (291 MB)
+          </button>
         </div>
       </div>
     </div>

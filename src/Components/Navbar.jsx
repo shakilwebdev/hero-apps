@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <Link
-          // target="_blank"
+          target="_blank"
           to="https://github.com/shakilwebdev"
           className="btn text-white font-semibold bg-gradient-to-r from-[#632ee3] to-[#9f62f2]"
         >
