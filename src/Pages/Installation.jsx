@@ -19,6 +19,16 @@ const Installation = () => {
       return appList;
     }
   })();
+
+  const handleRemove = (id) => {
+    const existingList = JSON.parse(localStorage.getItem("installation"));
+    let updatedList = existingList.filter((a) => a.id !== id);
+    // for ui instant update
+    // setAppeList(existingList.filter((a) => a.id !== id));
+    // setAppeList((prev) => prev.filter((a) => a.id !== id));
+    setAppeList(updatedList);
+    localStorage.setItem("installation", JSON.stringify(updatedList));
+  };
   return (
     <div className="max-w-[1440px] mx-auto px-1">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#001931] text-center mt-20">
@@ -71,7 +81,10 @@ const Installation = () => {
                 </div>
               </div>
             </div>
-            <button className="mt-5 sm:mt-0 btn bg-[#00d390] text-white font-semibold sm:text-xl">
+            <button
+              onClick={() => handleRemove(a.id)}
+              className="mt-5 sm:mt-0 btn bg-[#00d390] text-white font-semibold sm:text-xl"
+            >
               Uninstall
             </button>
           </div>
