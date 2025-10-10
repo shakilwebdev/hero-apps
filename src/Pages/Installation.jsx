@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DownloadIcon from "../assets/icon-downloads.png";
 import RatingIcon from "../assets/icon-ratings.png";
+import { toast } from "react-toastify";
 
 const Installation = () => {
   const [appList, setAppeList] = useState([]);
@@ -27,6 +28,7 @@ const Installation = () => {
     // setAppeList(existingList.filter((a) => a.id !== id));
     // setAppeList((prev) => prev.filter((a) => a.id !== id));
     setAppeList(updatedList);
+    toast.success("Uninstall successfully");
     localStorage.setItem("installation", JSON.stringify(updatedList));
   };
   return (
